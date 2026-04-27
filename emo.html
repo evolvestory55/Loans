@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="600" height="375">
+  <!-- Arka plan -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f2027"/>
+      <stop offset="100%" stop-color="#2c5364"/>
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#00b09b"/>
+      <stop offset="100%" stop-color="#96c93d"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="250" fill="url(#bg)"/>
+
+  <!-- Izgara çizgileri -->
+  <g stroke="#ffffff22" stroke-width="1">
+    <line x1="40" y1="50"  x2="380" y2="50"/>
+    <line x1="40" y1="100" x2="380" y2="100"/>
+    <line x1="40" y1="150" x2="380" y2="150"/>
+    <line x1="40" y1="200" x2="380" y2="200"/>
+  </g>
+
+  <!-- Eksenler -->
+  <line x1="40" y1="20"  x2="40" y2="200" stroke="#fff" stroke-width="2"/>
+  <line x1="40" y1="200" x2="380" y2="200" stroke="#fff" stroke-width="2"/>
+
+  <!-- Animasyonlu çubuklar -->
+  <g fill="url(#barGrad)">
+    <rect x="70"  y="200" width="30" height="0">
+      <animate attributeName="height" from="0" to="60"  dur="1.2s" fill="freeze"/>
+      <animate attributeName="y"      from="200" to="140" dur="1.2s" fill="freeze"/>
+    </rect>
+    <rect x="120" y="200" width="30" height="0">
+      <animate attributeName="height" from="0" to="90"  dur="1.4s" begin="0.2s" fill="freeze"/>
+      <animate attributeName="y"      from="200" to="110" dur="1.4s" begin="0.2s" fill="freeze"/>
+    </rect>
+    <rect x="170" y="200" width="30" height="0">
+      <animate attributeName="height" from="0" to="50"  dur="1.4s" begin="0.4s" fill="freeze"/>
+      <animate attributeName="y"      from="200" to="150" dur="1.4s" begin="0.4s" fill="freeze"/>
+    </rect>
+    <rect x="220" y="200" width="30" height="0">
+      <animate attributeName="height" from="0" to="120" dur="1.6s" begin="0.6s" fill="freeze"/>
+      <animate attributeName="y"      from="200" to="80"  dur="1.6s" begin="0.6s" fill="freeze"/>
+    </rect>
+    <rect x="270" y="200" width="30" height="0">
+      <animate attributeName="height" from="0" to="100" dur="1.6s" begin="0.8s" fill="freeze"/>
+      <animate attributeName="y"      from="200" to="100" dur="1.6s" begin="0.8s" fill="freeze"/>
+    </rect>
+    <rect x="320" y="200" width="30" height="0">
+      <animate attributeName="height" from="0" to="150" dur="1.8s" begin="1s"   fill="freeze"/>
+      <animate attributeName="y"      from="200" to="50"  dur="1.8s" begin="1s"   fill="freeze"/>
+    </rect>
+  </g>
+
+  <!-- Yükselen trend çizgisi -->
+  <polyline
+    points="85,140 135,110 185,150 235,80 285,100 335,50"
+    fill="none" stroke="#ffd700" stroke-width="3"
+    stroke-linecap="round" stroke-linejoin="round"
+    stroke-dasharray="400" stroke-dashoffset="400">
+    <animate attributeName="stroke-dashoffset" from="400" to="0" dur="2s" begin="1s" fill="freeze"/>
+  </polyline>
+
+  <!-- Trend okunun ucundaki ışıltılı nokta -->
+  <circle cx="335" cy="50" r="5" fill="#ffd700" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3s" fill="freeze"/>
+    <animate attributeName="r" values="5;9;5" dur="1.2s" begin="3s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Dönen dolar sembolü -->
+  <g transform="translate(360,30)">
+    <circle r="16" fill="#ffd700"/>
+    <text x="0" y="6" text-anchor="middle" font-family="Arial Black, sans-serif"
+          font-size="22" fill="#0f2027" font-weight="bold">$</text>
+    <animateTransform attributeName="transform" type="rotate"
+      from="0" to="360" dur="6s" repeatCount="indefinite" additive="sum"/>
+  </g>
+
+  <!-- Süzülen para sembolleri -->
+  <g font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#96c93d">
+    <text x="50" y="230" opacity="0">€
+      <animate attributeName="y" from="230" to="20" dur="4s" begin="0s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="4s" begin="0s" repeatCount="indefinite"/>
+    </text>
+    <text x="200" y="230" opacity="0">£
+      <animate attributeName="y" from="230" to="20" dur="5s" begin="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="5s" begin="1.5s" repeatCount="indefinite"/>
+    </text>
+    <text x="300" y="230" opacity="0">¥
+      <animate attributeName="y" from="230" to="20" dur="4.5s" begin="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="4.5s" begin="2.5s" repeatCount="indefinite"/>
+    </text>
+  </g>
+
+  <!-- Başlık -->
+  <text x="200" y="30" text-anchor="middle" font-family="Arial, sans-serif"
+        font-size="16" fill="#fff" font-weight="bold" opacity="0">
+    📈 Finansal Büyüme
+    <animate attributeName="opacity" from="0" to="1" dur="1.5s" begin="0.5s" fill="freeze"/>
+  </text>
+</svg>
